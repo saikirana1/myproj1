@@ -1,0 +1,152 @@
+<html>
+<script language="javascript">
+function validate()
+{
+	u=f2.t1.value;
+	p=f2.t2.value;
+	e=f2.t3.value;
+	mn=f2.t4.value;
+	uexp = /[a-zA-Z]/; //User Name
+	pexp = /^[a-zA-Z0-9]{6,}$/; // Password
+	mexp = /^[9|8|7|6][0-9]{9}/; //Mobile Number
+	eexp = /^[a-zA-Z][0-9](@)*[a-zA-Z](.)*[a-zA-Z]{2,3}/; //E-mail
+	if(u=="")
+	{
+		alert("Enter UserName");
+		return false;
+	}
+	else if(uexp.test(u)==false)
+	{
+		alert("Username Should contains only characters");
+		return false;
+	}
+	else if(p=="")
+	{
+		alert("Enter Password");
+		return false;
+	}
+	else if(pexp.test(p)==false)
+	{
+		alert("Password Should contain alteast minimum 6 characters");
+		return false;
+	}
+	else if(e=="")
+	{
+		alert("Enter Email-id");
+		return false;
+	}
+	else if(eexpo.test(e)==false)
+	{
+		alert("Enter Valid Email-id");
+		return false;
+	}
+
+	else if(mn=="")
+	{
+		alert("Enter Mobile Number");
+		return false;
+	}
+	else if(mexp.test(mn)==false)
+	{
+		alert("Mobile Number should start wih 9|8|7|6");
+		return false;
+	}
+	else if(f2.r1[0].checked==false && f2.r1[1].checked==false)
+	{
+		alert("Select Gender");
+		return false;
+	}
+	else if(f2.c1.checked==false && f2.c2.checked==false && f2.c3.checked==false)
+	{
+		alert("Select Languages Known");
+		return false;
+	}
+	else if(f2.s1.selectedIndex==false)
+	{
+		alert("Select Date");
+		return false;
+	}
+	else if(f2.s2.selectedIndex==false)
+	{
+		alert("Select Month");
+		return false;
+	}
+	else if(f2.s3.selectedIndex==false)
+	{
+		alert("Select Year");
+		return false;
+	}
+	else if(f2.txt1.value=="")
+	{
+		alert("Address");
+		return false;
+	}
+	else if(f2.i1.files.length==0)
+	{
+		alert("Upload Image");
+		return false;
+	}
+	else
+	{
+		alert("validation Successfull");
+		return false;
+	}
+
+}
+</script>
+<body>
+<form name="f2" method="post" action="" onsubmit="validate()">
+<fieldset>
+<legend> Registration Form </legend>
+<table>
+<tr>
+<td> Name: <input type="text" name="t1"></td>
+</tr>
+<tr>
+<td>Password: <input type="password" name="t2"></td>
+</tr>
+<tr>
+<td>Email ID: <input type="text" name="t3"></td>
+</tr>
+<tr>
+<td>Mobile Number: <input type="number" name="t4" maxlength=10></td>
+</tr>
+<tr>
+<td>Gender: <input type="radio" name="r1"> Female <input type="radio" name="r1"> Male</td>
+</tr>
+<tr>
+<td>Languages Known: <input type="checkbox" name="c1">Telugu <input type="checkbox" name="c2">English <input type="checkbox" name="c3">Hindi</td>
+</tr>
+<tr>
+<td>Date of Birth 
+<select name="s1">
+<option> Date </option>
+<option> 1 </option>
+<option> 2 </option>
+</select>
+<select name="s2">
+<option> Month </option>
+<option> 1 </option>
+<option> 2 </option>
+</select>
+<select name="s3">
+<option>Year</option>
+<option> 1998</option>
+<option> 1999</option>
+</select>
+</td>
+</tr>
+<tr>
+<td>Address:<textarea cols=10 rows=3 name="txt1"></textarea></td>
+</tr>
+<tr>
+<td>Upload Image <input type="file" name="i1"></td>
+</tr>
+<tr>
+<td><input type="submit" name="b2" value="SUBMIT">&nbsp;&nbsp;<input type="reset" name="b3" value="RESET"></td>
+</tr>
+</table>
+</fieldset>
+</form>
+</body>
+</html>
